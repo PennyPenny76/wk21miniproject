@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         path: '/matchup',
         element: <Matchup />
       }, {
-        path: '/matchup/:id',
+        path: '/matchup/:matchupId',
         element: <Vote />
       },
     ],

@@ -6,16 +6,16 @@ export const CREATE_MATCHUP = gql`
       _id
       tech1
       tech2
+      tech1_votes
+      tech2_votes
     }
   }
 `;
 
 export const CREATE_VOTE = gql`
-  mutation createVote($_id: String!, $techNum: Int!) {
-    createVote(_id: $_id, techNum: $techNum) {
+  mutation createVote($matchupId: ID!, $techNum: Int!) {
+    createVote(matchupId: $matchupId, techNum: $techNum) {
       _id
-      tech1
-      tech2
       tech1_votes
       tech2_votes
     }

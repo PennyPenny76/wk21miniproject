@@ -3,17 +3,15 @@ const { Matchup,Tech } = require('../models');
 const resolvers = {
 
   Query: {
-    matchups: async () => {
-      return Matchup.find();
+    matchups: async (parent, { _id }) => {
+      const params = _id ? { _id } : {};
+      return Matchup.find(params);
     },
 
-    techs: async () => {
+    tech: async () => {
         return Tech.find();
     },
 
-    matchup: async (parent, { matchupId }) => {
-      return Matchup.findOne({ _id: matchupId });
-    },
   },
 
   Mutation: {

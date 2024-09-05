@@ -14,8 +14,7 @@ const typeDefs = `
 
   type Query {
     matchups: [Matchup]!
-    techs: [Tech]!
-    matchup(matchupId: ID!): Matchup
+    tech: [Tech]!
   }
 
   type Mutation {
